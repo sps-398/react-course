@@ -1,32 +1,27 @@
-function ExpenseItem() {
+import './ExpenseItem.css';
+
+function ExpenseItem(props) {
     return (
         <div>
-            <div>
+            <div className="expense_item">
                 <div>
-                    Food
+                    {props.id}
                 </div>
                 <div>
-                    $50
+                    {props.date.toISOString().split('T')[0]}
                 </div>
-            </div>
-            <div>
-                <div>
-                    Petrol
+                <div className="title">
+                    {props.title}
                 </div>
-                <div>
-                    $100
+                <div className='location'>
+                    {props.location}
                 </div>
-            </div>
-            <div>
-                <div>
-                    Movies
-                </div>
-                <div>
-                    $200
+                <div className="amount">
+                    {props.amount}
                 </div>
             </div>
         </div>
     );
-}
+}   
 
-export default ExpenseItem
+export default ExpenseItem;
