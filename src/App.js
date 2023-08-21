@@ -29,7 +29,6 @@ function App() {
       <h2>Let's get started!</h2>
       <div id="expense-container">
       </div>
-      
       <ExpenseItem id={expenses[1].id} title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date} location={expenses[1].location}></ExpenseItem>
       <ExpenseItem id={expenses[2].id} title={expenses[2].title} amount={expenses[2].amount} date={expenses[2].date} location={expenses[2].location}></ExpenseItem>
     </div>

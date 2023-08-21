@@ -1,0 +1,17 @@
+.expense_detail {
+    width: 90%;
+    margin: 1rem 0;
+    /* padding: 0.5rem; */
+    background-color: white ;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount {
+    padding: 0.5rem;
+    background-color: darkblue;
+    color: white;
+    border-radius: 0.5rem;
+}
