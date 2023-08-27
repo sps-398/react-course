@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-function ExpenseForm() {
+function ExpenseForm(props) {
     const [ enteredTitle, setTitle ] = useState("");
     const [ enteredAmount, setAmount ] = useState("");
     const [ enteredDate, setDate ] = useState("");
 
-    function addExpense(e) {
+    function submitForm(e) {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        for(const entry of formData.entries()) {
-            console.log(entry[0]);
-            console.log(entry[1]);
-        }
+        
+        const expense = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+
+        console.log("Inside Expense Form " + expense);
+
+        props.onSaveExpenseData(expense);
+
+        setTitle('');
+        setAmount('');
+        setDate('');
     }
 
     return (
         <div className="add_expense_form_contianer flex">
-            <form id="add_expense_form" onSubmit={addExpense} className='add_expense_form flex'>
+            <form id="add_expense_form" onSubmit={submitForm} className='add_expense_form flex'>
                 <div className='expense_form_input'>
                     <label>Title</label>
                     <input type="text" onChange={e => setTitle(e.target.value)} value={enteredTitle} placeholder="Enter expense title" name="expense_title"></input>
