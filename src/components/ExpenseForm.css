@@ -4,19 +4,20 @@
     align-items: center;
 }
 
-.add_expense_form_container {
-    width: 100vw;
+.hide {
+    display: none;
 }
 
 .add_expense_form {
-    width: 50%;
+    width: 100%;
     margin: auto;
-    flex-direction: column;
+    flex-wrap: wrap;
     color: white;
+    justify-content: start;
 }
 
 .expense_form_input {
-    width: 50%;
+    width: 40%;
     margin: 0.5rem;
 }
 
@@ -31,15 +32,17 @@
 }
 
 .expense_form_action {
-    width: 50%;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: end;
 }
 
 .expense_form_action > button {
     padding: 1rem;
-    /* height: 2rem; */
     background-color: blue;
     color: white;
     border-radius: 1rem;
     cursor: pointer;
     border: none;
+    margin: 0.3rem;
 }
