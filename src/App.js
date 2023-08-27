@@ -26,12 +26,12 @@ function App() {
     }
   ];
 
-  const [expenses, addExpense] = useState(items);
+  const [expenses, setExpenses] = useState(items);
 
   function addExpenseHandler(newExpense) {
-    console.log("Inside App", expenses);
-    expenses.push(newExpense);
-    addExpense(expenses);
+    setExpenses(prevExpenses => {
+      return [newExpense, ...prevExpenses];
+    });
   }
 
   return (
